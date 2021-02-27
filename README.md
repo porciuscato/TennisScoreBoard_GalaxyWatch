@@ -6,7 +6,7 @@
 
 아버지께서 테니스를 좋아하시는데, 경기 중 스코어를 암기하면 종종 잊는 경우가 발생해 우기는 사람들이 생긴다고 하신다.
 
-그래서 스마트폰에 테니스 스코어 어플을 설치하긴 했지만, 경기 중 점수가 날 때마다 핸드폰을 꺼내서 점수를 체크하는 건 너무나 번거로운 일이다. 게다가 핸드폰을 주머니에 넣고 게임을 했다가 한 경기도 안 되서 폰이 박살날 것이다.
+그래서 스마트폰에 테니스 스코어 어플을 설치하긴 했지만, 경기 중 점수가 날 때마다 핸드폰을 꺼내서 점수를 체크하는 건 너무나 번거로운 일이다. 게다가 핸드폰을 주머니에 넣고 게임을 했다간 한 경기도 안 되서 폰이 박살날 것이다.
 
 이전에 아버지께 갤럭시 워치를 사드린 적이 있는데, 이 워치에 핸드폰과 같은 스코어 어플이 있으면 좋겠다고 말씀하셨다. 그래서 하나 만들었다.
 
@@ -25,3 +25,5 @@
 하지만 워치와 PC의 연결이 계속 실패하여 이 [글](https://forum.developer.samsung.com/t/cant-connect-samsung-galaxy-watch-to-tizen-device-manager/7189/3)을 보고 해결했다.
 
 즉, 핸드폰의 핫스팟을 켜 노트북과 워치를 연결했다. 이래도 되지 않자, 세 기기를 모두 재부팅하고 다시 연결했더니 성공했다.
+
+> 참고로 위 개발 레퍼런스에는 타이젠 스튜디오 내에서 Connection Explorer를 실행하라고 되어있는데 현재 Tizen Studio에 Explorer는 Project Explorer 밖에 없다. 현재 버전에서는 Tizen Studio를 설치하면 여러 앱들(Certificate Manager, Emulator Manager, Dynamic Analyzer, Device Manager, Package Manager)도 함께 설치되는데, 이 중 Device Manager를 실행시킨 뒤 동일하게 진행하면 된다.
