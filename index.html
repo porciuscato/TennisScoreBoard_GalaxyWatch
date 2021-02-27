@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <meta name="description" content="Calc"/>
+    <title>Calculator</title>
+</head>
+<body>
+    <!-- Application wrapper-->
+    <div class="app-wrapper">
+        <!-- Display area -->
+        <!--<div id="screen">
+            <div id="overflow"></div>
+            <div id="display" valign="middle" class="empty-result">
+                <div id="equation"></div>
+                <div id="result"><span id="resultvalue"></span></div>
+            </div>
+        </div>-->
+        <!-- Numpad buttons -->
+        <div id="numpad">
+        	<div id="key_name_left" class="key col-2 row-1">A</div>
+            <div id="key_name_right" class="key col-2 row-1">B</div>
+            
+            <div id="key_score_left" class="key col-5 row-2">0</div>
+            <div id="key_reset" class="key col-6 c row-2" onclick= "reset()">reset</div>
+        	<div id="key_score_right" class="key col-5 row-2">0</div>
+        	
+            <div id="key_point_left" class="key col-2 row-3" onclick= "point_left()">0</div>
+            <div id="key_point_right" class="key col-2 row-3" onclick= "point_right()">0</div>
+        </div>
+    </div>
+    <script src="js/core/core.js" data-main="js/app.js"></script>
+    <script>
+        function point_left() {
+        	var left = document.getElementById("key_point_left");
+        	var right = document.getElementById("key_point_right");
+        	var lvalue = left.textContent;
+        	var rvalue = right.textContent;
+        	
+        	if (lvalue == 0){
+        		left.innerHTML = 15;
+        	}
+        	else if (lvalue == 15) {
+        		left.innerHTML = 30;
+        	}
+        	else if (lvalue == 30) {
+        		left.innerHTML = 40;
+        	}
+        	else if (lvalue == 40 && rvalue == 40) {
+        		left.innerHTML = "AD";
+        	}
+        	else if (lvalue == 40 && rvalue == "AD") {
+        		right.innerHTML = 40;
+        	}
+        	else if (lvalue == 40) {
+				var score = document.getElementById("key_score_left");
+        		var point = Number(score.textContent);
+        		score.textContent = point + 1;
+        		left.innerHTML = 0;
+        		right.innerHTML = 0;
+        	}
+        	else if (lvalue == "AD") {
+        		left.innerHTML = 0;
+        		right.innerHTML = 0;
+        		var score = document.getElementById("key_score_left");
+        		var point = Number(score.textContent);
+        		score.textContent = point + 1;
+        	}
+        }
+        
+        function point_right() {
+        	var right = document.getElementById("key_point_right");
+        	var left = document.getElementById("key_point_left");
+        	var rvalue = right.textContent;
+        	var lvalue = left.textContent;
+        	
+			if (rvalue == 0){
+        		right.innerHTML = 15;
+        	}
+        	else if (rvalue == 15) {
+        		right.innerHTML = 30;
+        	}
+        	else if (rvalue == 30) {
+        		right.innerHTML = 40;
+        	}
+        	else if (lvalue == 40 && rvalue == 40) {
+        		right.innerHTML = "AD";
+        	}
+        	else if (lvalue == "AD" && rvalue == 40) {
+        		left.innerHTML = 40;
+        	}
+        	else if (rvalue == 40) {
+				var score = document.getElementById("key_score_right");
+        		var point = Number(score.textContent);
+        		score.textContent = point + 1;
+        		left.innerHTML = 0;
+        		right.innerHTML = 0;
+        	}
+        	else if (rvalue == "AD") {
+        		var score = document.getElementById("key_score_right");
+        		var point = Number(score.textContent);
+        		score.textContent = point + 1;
+        		left.innerHTML = 0;
+        		right.innerHTML = 0;
+        	}
+        }
+        
+        function reset() {
+        	var score1 = document.getElementById("key_score_left");
+        	var score2 = document.getElementById("key_score_right");
+        	var point1 = document.getElementById("key_point_left");
+        	var point2 = document.getElementById("key_point_right");
+        	score1.innerHTML = 0;
+        	score2.innerHTML = 0;
+        	point1.innerHTML = 0;
+        	point2.innerHTML = 0;
+        }
+    </script>
+</body>
+</html>
